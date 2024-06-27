@@ -5,6 +5,8 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
 
 /*
  * Необходимо, учитывая строку, заменить каждую букву ее позицией в алфавите.
@@ -21,6 +23,31 @@
 char *alphabet_position(char *text)
 {
     // Your code here
+    int max_len = 0;
+    for (char *p = text; *p != "\0"; p++){
+        if (isalpha(*p)){
+            len += 3;
+        }
+    }
+    
+    char *result = (char *)malloc(len + 1);
+    
+    char *out = result;
+    for (char *p = text; *p != '\0'; p++) {
+            if (isalpha(*p)) {
+                int position = tolower(*p) - 'a' + 1;
+                out += sprintf(out, "%d ", position);
+            }
+        }
+
+        if (out > result) {
+            *(out - 1) = '\0';
+        }
+
+        return result;
+
+    
+    
     return text;
 }
 
