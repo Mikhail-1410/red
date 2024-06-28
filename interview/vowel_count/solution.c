@@ -14,7 +14,19 @@
 
 size_t get_count(const char *s)
 {
-    // Your code here
-    return 0;
+    size_t count = 0;
+    const char *vowels = "aeiou";
+    
+    while (*s) {
+            for (const char *v = vowels; *v; ++v) {
+                if (*s == *v) {
+                    ++count;
+                    break;
+                }
+            }
+            ++s;
+        }
+        
+        return count;
 }
 
