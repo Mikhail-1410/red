@@ -23,8 +23,8 @@
 char *alphabet_position(char *text)
 {
     // Your code here
-    int max_len = 0;
-    for (char *p = text; *p != "\0"; p++){
+    int len = 0;
+    for (char *p = text; *p != '\0'; p++){
         if (isalpha(*p)){
             len += 3;
         }
