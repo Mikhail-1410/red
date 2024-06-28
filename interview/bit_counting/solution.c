@@ -16,7 +16,11 @@
 
 size_t countBits(unsigned value)
 {
-    // Your code here
-    return 0;
+    size_t count = 0;
+        while (value) {
+            value &= (value - 1);  // убираем самый правый единичный бит
+            count++;
+        }
+        return count;
 }
 
